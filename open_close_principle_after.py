@@ -53,9 +53,9 @@ class CreditPaymentProcess(PaymentProcess):
 # Adding new payment method
 class PayPalPaymentProcess(PaymentProcess):
     
-    def pay(self, order, security_code):
+    def pay(self, order, email_address):
         print(f"Initializig Pyapal Payment type: ")
-        print(f"Verifying Secirity Code: {security_code}")
+        print(f"Verifying email Code: {email_address}")
         order.payment_status = True
         print("Payment Success")
 
@@ -65,4 +65,4 @@ order.add_item('Laptop', 2, 45000)
 order.add_item('HDD', 1, 2000)
 print(f"Total price: {order.total_price()}")
 payment=PayPalPaymentProcess()
-payment.pay(order, '90r3434')
+payment.pay(order, 'syedzaidahmad99@gmail.com')
