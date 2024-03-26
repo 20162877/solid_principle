@@ -32,7 +32,7 @@ class Order:
 class PaymentProcess(ABC):
     
     @abstractmethod
-    def pay(self, payment_type, security_code):
+    def pay(self, order, security_code):
         pass
                
 class DebitPaymentProcess(PaymentProcess):
