@@ -34,7 +34,6 @@ class PaymentProcess(ABC):
     @abstractmethod
     def pay(self, payment_type, security_code):
         pass
-    
                
 class DebitPaymentProcess(PaymentProcess):
     
@@ -51,11 +50,19 @@ class CreditPaymentProcess(PaymentProcess):
         print(f"Verifying Secirity Code: {security_code}")
         order.payment_status = True
         print("Payment Success")
+# Adding new payment method
+class PayPalPaymentProcess(PaymentProcess):
+    
+    def pay(self, order, security_code):
+        print(f"Initializig Pyapal Payment type: ")
+        print(f"Verifying Secirity Code: {security_code}")
+        order.payment_status = True
+        print("Payment Success")
 
         
 order = Order()
 order.add_item('Laptop', 2, 45000)
 order.add_item('HDD', 1, 2000)
 print(f"Total price: {order.total_price()}")
-payment=DebitPaymentProcess()
+payment=PayPalPaymentProcess()
 payment.pay(order, '90r3434')
