@@ -1,6 +1,6 @@
-# In Previous section add item and payment process we had used in single class.
+# In Previous section we item and payment process in single class.
 # Which violates single risponsibilty principle
-# We'll used separeate class for payment process to promote SRP.
+# We'll use separeate class for payment process to promote SRP.
 
 class Order:
     
