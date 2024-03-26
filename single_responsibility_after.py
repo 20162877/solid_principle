@@ -1,3 +1,7 @@
+# In Previous section add item and payment process we had used in single class.
+# Which violates single risponsibilty principle
+# We'll used separeate class for payment process to promote SRP.
+
 class Order:
     
     def __init__(self):
@@ -18,18 +22,20 @@ class Order:
             total += self.quantities[i]*self.prices[i]
             
         return total
+
+class PaymentProcess:
     
-    def payment_process(self, payment_type, security_code):
+    def payment_process(self, order, payment_type, security_code):
         
         if payment_type == 'debit':
             print(f"Initializig Debit Payment type: ")
             print(f"Verifying Secirity Code: {security_code}")
-            self.payment_status = True
+            order.payment_status = True
             print("Payment Success")
         elif payment_type == 'credi':
             print(f"Initializig Credi Payment type: ")
             print(f"Verifying Secirity Code: {security_code}")
-            self.payment_status = True
+            order.payment_status = True
             print("Payment Success")
         
         else:
@@ -38,5 +44,6 @@ class Order:
 order = Order()
 order.add_item('Laptop', 2, 45000)
 order.add_item('HDD', 1, 2000)
-
-order.payment_process('debit', '90r3434')
+print(f"Total price: {order.total_price()}")
+payment=PaymentProcess()
+payment.payment_process(order,'debit', '90r3434')
