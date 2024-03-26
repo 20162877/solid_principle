@@ -55,7 +55,7 @@ class PayPalPaymentProcess(PaymentProcess):
     
     def pay(self, order, email_address):
         print(f"Initializig Pyapal Payment type: ")
-        print(f"Verifying email Code: {email_address}")
+        print(f"Verifying email Address: {email_address}")
         order.payment_status = True
         print("Payment Success")
 
