@@ -1,5 +1,5 @@
 # Open close principle stands for open for extension and close for modification
-# In payment pocess We can't add new payment pethod without having to change existing code.
+# In payment process We can't add new payment method without having to change existing code.
 # Resulting violates open close principle
 
 class Order:
@@ -32,9 +32,9 @@ class PaymentProcess:
             print(f"Verifying Secirity Code: {security_code}")
             order.payment_status = True
             print("Payment Success")
-        elif payment_type == 'credi':
-            print(f"Initializig Credi Payment type: ")
-            print(f"Verifying Secirity Code: {security_code}")
+        elif payment_type == 'credit':
+            print(f"Initializig Credit Payment type: ")
+            print(f"Verifying Security Code: {security_code}")
             order.payment_status = True
             print("Payment Success")
         
